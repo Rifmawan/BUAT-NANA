@@ -13,7 +13,6 @@ padding:0;
 font-family: 'Segoe UI', sans-serif;
 background: linear-gradient(135deg, #ff9a9e, #fad0c4);
 min-height:100vh;
-overflow-y:auto;
 scroll-behavior:smooth;
 }
 
@@ -53,7 +52,7 @@ margin-top:20px;
 line-height:1.8;
 }
 
-/* Hati */
+/* hati */
 .heart{
 position:fixed;
 width:20px;
@@ -99,15 +98,23 @@ from{opacity:0;transform:translateY(20px);}
 to{opacity:1;transform:translateY(0);}
 }
 
+iframe{
+display:none;
+}
+
 </style>
 
 </head>
 
 <body>
 
-<audio id="music" loop>
-<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_0c4e92cdb9.mp3?filename=romantic-love-110117.mp3" type="audio/mpeg">
-</audio>
+<!-- Musik -->
+<iframe id="music" 
+width="0" 
+height="0" 
+src="" 
+allow="autoplay">
+</iframe>
 
 <div class="container">
 
@@ -149,7 +156,8 @@ function showMessage(){
 
 document.getElementById("message").style.display="block";
 
-document.getElementById("music").play();
+document.getElementById("music").src =
+"https://www.youtube.com/embed/q-9kPks0IfE?autoplay=1&loop=1&playlist=q-9kPks0IfE";
 
 createHearts();
 
